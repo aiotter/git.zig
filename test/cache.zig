@@ -9,7 +9,7 @@ test "Read test/cache/index" {
 
     var reader = cache.CacheReader{ .memory = &buffer };
     const header = reader.header();
-    assert(std.mem.eql(u8, header.signature[0..], "DIRC"[0..]));
+    assert(std.mem.eql(u8, header.signature[0..], "DIRC"));
     assert(header.version == 2);
     assert(header.entry_count == 2);
 
